@@ -16,4 +16,4 @@ WH2 - Fibonacci Dizi için;
 3. satirda kullaniciya hangi siradaki sayiyi istedigini soruyoruz.
 4. satirda for dongusunu baslatiyoruz ve bu donguyu 0'dan baslatarak kullanicinin istediği sayiya kadar donduruyoruz.
 5. satirda kullanicinin istedigi siradaki sayiyi ekrana yazdiriyoruz. 6.satirda basta verdigimiz a degerini c'ye atiyoruz. 7.satirda ise b degerini a'ya atiyoruz. En son olarak da yeni c ve b degerlerini toplayip b degerini atiyoruz.
-6., 7. ve 8. satirdaki islemler kullanicinin istedigi sayiya kadar devam ediyor.
+6., 7. ve 8. satirdaki islemler kullanicinin istedigi sayiya kadar devam ediyor..
