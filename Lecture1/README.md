@@ -1,7 +1,7 @@
 
 WH1 - Hesaplama icin;
-Birinci satirda kullaniciya dongunun sınırını belirlemesini soyluyoruz.
-Ikinci satirda for dongusunu tanimlayarak degerlerini belirtiyoruz. Burada 0,3 degerleri yazilan kodun 3 kere calismasini saglamaktadir.
+1. satirda kullaniciya dongunun sınırını belirlemesini soyluyoruz.
+2. satirda for dongusunu tanimlayarak degerlerini belirtiyoruz. Burada 0,3 degerleri yazilan kodun 3 kere calismasini saglamaktadir.
 3., 4. ve 5. satirlarda kullanicinin iki sayi ve bir islem girmesini sagliyoruz.
 6., 8., 10. ve 14. satirlarda kullanıcının hangi islem operatorunu sectigine gore isleme gecis yapacagiz.
 7., 9., 11. ve 15. satirlarda secilen operatore gore islemi gerceklestiriyoruz.
