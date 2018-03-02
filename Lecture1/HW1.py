@@ -16,4 +16,4 @@ for i in range(0,dongu) :
     elif islem == "exit":
         break
     else:
-        print("Lütfen belirtilen operatörlerden birini giriniz")
+        print("Lütfen belirtilen operatörlerden birini giriniz.")
