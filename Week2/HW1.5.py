@@ -1,11 +1,17 @@
 import random
-sayi = 0
 arr = [None] * 100
+temparr = [None] * 100
+ilktoplam = 0
 for i in range(1, 100):
+    ilktoplam = ilktoplam + i
     arr[i] = i
-    arr2 = i
-arr[0] = random.randint(1, 99)
-print(arr)
+arr[0] = random.randint(1,99)
 random.shuffle(arr)
-randoms = [x for n, x in enumerate(arr) if x in arr[:n]]
-print ("Random:", randoms)
+print(arr)
+for i in arr:
+    d = temparr[i]
+    if d == None:
+        temparr[i-1]=1
+    else:
+        print("random: {}".format(i))
+        break
