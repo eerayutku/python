@@ -2,16 +2,18 @@
 ```python
 import random
 sayi = 0
+ilktoplam = 0
 toplam = 0
 a = [None] * 100
 for i in range(1, 100):
     a[i] = i
+    ilktoplam = ilktoplam + i
 a[0] = random.randint(1,99)
 random.shuffle(a)
 print(a)
 for i in a:
     toplam = toplam + i
-sayi = toplam - 4950
+sayi = toplam - ilktoplam
 print("random:",sayi)
 ```
 > 'sayi' ve 'toplam' adinda iki degisken tanimladim. Daha sonra 'a' dizisi tanimlayip 100'e kadar olan sayilari ekledim. Daha sonra bu sayilari 'shuffle' ile karistirdim. Bir dongu olustutup bu sayilari toplattim. Karisan sayilarda fazladan bir sayi oldugu icin bu toplamdan fazla cikti. Cikan sayiyi toplamdan cikararak duplicate sayiyi buldum.
@@ -19,18 +21,22 @@ print("random:",sayi)
 ## **HW1 (2.yontem)** ##
 ```python
 import random
-sayi = 0
 arr = [None] * 100
+temparr = [None] * 100
 for i in range(1, 100):
     arr[i] = i
-    arr2 = i
-arr[0] = random.randint(1, 99)
-print(arr)
+arr[0] = random.randint(1,99)
 random.shuffle(arr)
-randoms = [x for n, x in enumerate(arr) if x in arr[:n]]
-print ("Random:", randoms)
+print(arr)
+for i in arr:
+    d = temparr[i]
+    if d == None:
+        temparr[i-1]=1
+    else:
+        print("random: {}".format(i))
+        break
 ```
-> Cogu kismi 1.yontem ile tek farkı son kisimda 'enumerate' komudunu calistirmamiz. Bu kod ile birlikte arr dizisindeki elemanlara bir deger atiyoruz. Daha sonra dizide bulunan her eleman icin deger atinca bir eleman fazla cikiyor. Bu fazla cikan eleman duplicate olan sayi olmus oluyor.
+> İki tane dizi actim. İlk dizide sayilari karistirarak sayilari diziye ekledim. Ikinci diziye de bu sayilarin olup olmadigini kontrol ediyorum. Birinci dizide olan sayilarin yeri ikinci sayida da dolduruluyor. Hepsi doldurulunca geriye bir tane fazla sayi kaliyor. Bu fazla sayi duplicaye olmus oluyor.
 
 ## **HW2** ##
 ```python
@@ -43,27 +49,40 @@ print("kelime[:a]+ kelime[b:]: {}".format(kelime[:a]+kelime[b:]))
 
 ## **HW3** ##
 ```python
-deger = []
-s = input("Bir cümle yada kelime giriniz : ")
+a=[]
+s= input("Bir cümle ya da kelime giriniz:")
 s = s.lower()
-deger += s
-sira =[ii for n , ii in enumerate(deger) if ii not in deger[:n]]
-d= "".join(sira)
-print(d)
+tmp=[None] * len(s)
+i = 0
+for c in s:
+    print(c)
+    varmi = False
+    for j in range(0,i):
+        k = tmp[j]
+        if c == k:
+            varmi = True
+    if varmi == False:
+        tmp[i]=c
+        i = i+1
+print(tmp)
 ```
-> Kullaniciya bir kelime girdiyoruz. Girdilen kelimeyi 'lowercase' işlemine soktum. Cunku ASCII çetelesinde buyuk harf ve kucuk harf farkı oldugundan buyuk kucuk duplicate harfleri cikarmiyordu. Daha sonra girilen degeri degiskene atadim. Daha sonra yine 'enumerate' kullanarak dizideki elemanlara sayi atadim. En son da bu degerleri join ederek yazdirdim.
+> Kullaniciya bir kelime girdiyoruz. Girdilen kelimeyi 'lowercase' işlemine soktum. Cunku ASCII çetelesinde buyuk harf ve kucuk harf farkı oldugundan buyuk kucuk duplicate harfleri cikarmiyordu. Daha sonra girilen degeri degiskene atadim. For içerisinde for acarak 'varmi' diye bir degisken tanimladim. Girilen kelimedeki harfleri bir diziye sokarak harfleri listeledim. Daha sonra bu harfleri bir diziye aktardim. Daha sonra kelimeleri diziye aktarirken bu harfin dizinin içerisinde olup olmadiginin kontrolunu yaptim.
 
 ## **HW4** ##
 ```python
-s = input("Lütfen bir kelime giriniz:")
-length = len(s)
-i = 0
-while i < length / 2 + 1:
-    if s[i] != s[-i - 1]:
-        print("Girdiğiniz kelime palindrom degildir")
-        break
-    i += 1
+a = input("Bir kelime giriniz:")
+if len(a) % 2 == 0:
+    print("palindrom degildir")
 else:
-    print("Girdiginiz kelime palindromdur.")
+    ort = len(a)/2
+    s = round(ort)-1
+    palindrom = True
+    for i in range(0,s):
+        if a[0-(i+1)] != a[i]:
+             print("palindrom degildir")
+             palindrom = False
+             break
+    if palindrom:
+             print("palindromdur")
 ```
-> Kullaniciya bir deger girmesini istiyoruz. Bu girilen sayinin uzunlugunu aliyoruz. Bu uzunluğu donguye sokarak kelimenin tersi ile aynı olup olmadigini kontrol ediyoruz.
+> Girilen kelimenin uzunlugunun oncelikle cift veya tek sayi oldugunu kontrol ettim. Uzuluk ciftse girilen kelime palindrom olmaz. Eger bu sayi tek ise isleme sokulur. Bu islemde oncelikle uzunlugu ikiye boldum. Daha sonra 'round(ort)' komutuyla bu sayiyi yukariya yuvarladim. 0'dan girilen kelimenin ortasindaki harfin degerine kadar donguyu calistirdim. Daha sonra ortanca sayinin onceki kismi ile(1,2,3) sonraki kısmının(-1,-2,-3) eşit olup olmadigini kontrol ettim. Eger esit degilse kelime palindrom degildir. Eger bu degerler esit ise sayi palindromdur.
