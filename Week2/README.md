@@ -40,12 +40,20 @@ for i in arr:
 
 ## **HW2** ##
 ```python
-kelime = input("Bir kelime giriniz:")
-a = int(input("Baslangic sayisini giriniz:"))
-b = int(input("Sonlandirma sayisini giriniz(Kelimedeki harf sayısından büyük olmamalıdır.):"))
-print("kelime[:a]+ kelime[b:]: {}".format(kelime[:a]+kelime[b:]))
+kelime = input("Bir Kelime Giriniz : ")
+a = int(input("Başlangıç Sayısını Giriniz : "))
+b = int(input("Bitiş Sayısını Giriniz : "))
+if a > len(kelime) or b > len(kelime):
+    print("Kelimeden Büyük Değer Girilemez!")
+else:
+    if a <= 0 or b <= 0:
+        print("Sıfır Girilemez!")
+    else:
+        a = a-1
+        print("Girdiğiniz Kelime : ", kelime)
+        print("Kesilmiş Kelime : {}".format(kelime[:a]+kelime[b:]))
 ```
-> Kullaniciya kelime, baslangic sayisi ve sonlandirma sayisi girdiriyoruz. Daha sonra ':a' ve 'b:' kodlarıyla girilen baslangic sayisindan onceki harfleri ve girilen sonlandirma sayisindan sonraki degerleri ekrana yazdirdim.
+> Kullaniciya kelime, baslangic sayisi ve sonlandirma sayisi girdiriyoruz. Daha sonra ':a' ve 'b:' kodlarıyla girilen baslangic sayisindan onceki harfleri ve girilen sonlandirma sayisindan sonraki degerleri ekrana yazdirdim. 'if' kisimlarinda ise girilen baglangic ve sonlandirma sayilarinin gerekli kurallar icerisinde girilmesini sagladim. Bu kurallar girilen sayinin girilen kelimenin uzunlugundna buyuk olmamasi ve sifir girilememesidir. 'a = a-1' kisminda ise dizilerin ilk degeri sifira atandigi icin bunu engellemis oldum.
 
 ## **HW3** ##
 ```python
