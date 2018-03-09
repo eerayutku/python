@@ -1,11 +1,14 @@
-s = input("Lütfen bir kelime giriniz:")
-length = len(s)
-i = 0
-
-while i < length / 2 + 1:
-    if s[i] != s[-i - 1]:
-        print("Girdiğiniz kelime palindrom degildir")
-        break
-    i += 1
+a = input("Bir kelime giriniz:")
+if len(a) % 2 == 0:
+    print("palindrom degildir")
 else:
-    print("Girdiginiz kelime palindromdur.")
+    ort = len(a)/2
+    s = round(ort)-1
+    palindrom = True
+    for i in range(0,s):
+        if a[0-(i+1)] != a[i]:
+             print("palindrom degildir")
+             palindrom = False
+             break
+    if palindrom:
+             print("palindromdur")
