@@ -36,7 +36,7 @@ for i in arr:
         print("random: {}".format(i))
         break
 ```
-> İki tane dizi actim. İlk dizide sayilari karistirarak sayilari diziye ekledim. Ikinci diziye de bu sayilarin olup olmadigini kontrol ediyorum. Birinci dizide olan sayilarin yeri ikinci sayida da dolduruluyor. Hepsi doldurulunca geriye bir tane fazla sayi kaliyor. Bu fazla sayi duplicaye olmus oluyor.
+> İki tane dizi actim. İlk dizide sayilari karistirarak sayilari diziye ekledim. Ikinci diziye de bu sayilarin olup olmadigini kontrol ediyorum. Birinci dizide olan sayilarin yeri ikinci sayida da dolduruluyor. Hepsi doldurulunca geriye bir tane fazla sayi kaliyor. Bu fazla sayi duplicate olmus oluyor.
 
 ## **HW2** ##
 ```python
