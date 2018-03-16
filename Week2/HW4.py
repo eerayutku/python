@@ -1,14 +1,15 @@
-a = input("Bir kelime giriniz:")
-if len(a) % 2 == 0:
-    print("palindrom degildir")
+a = input("Bir kelime giriniz : ")
+a=a.lower()
+arr=[]
+arr2=[]
+for e in range(len(a)):
+    arr.append(a[e])
+    arr2.append(a[e])
+ort=len(a)/2
+ort=int(ort)
+for i in range (0,ort):
+    arr[i], arr[0 - (i + 1)] = arr[0 - (i + 1)], arr[i]
+if arr==arr2:
+    print("Palindromdur.")
 else:
-    ort = len(a)/2
-    s = round(ort)-1
-    palindrom = True
-    for i in range(0,s):
-        if a[0-(i+1)] != a[i]:
-             print("palindrom degildir")
-             palindrom = False
-             break
-    if palindrom:
-             print("palindromdur")
+    print("Palindrom değildir.")
