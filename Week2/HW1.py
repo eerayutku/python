@@ -13,3 +13,4 @@ for i in a:
     toplam = toplam + i
 sayi = toplam - ilktoplam
 print("random:",sayi)
+
