@@ -78,19 +78,20 @@ print(tmp)
 
 ## **HW4** ##
 ```python
-a = input("Bir kelime giriniz:")
-if len(a) % 2 == 0:
-    print("palindrom degildir")
+a = input("Bir kelime giriniz : ")
+a=a.lower()
+arr=[]
+arr2=[]
+for e in range(len(a)):
+    arr.append(a[e])
+    arr2.append(a[e])
+ort=len(a)/2
+ort=int(ort)
+for i in range (0,ort):
+    arr[i], arr[0 - (i + 1)] = arr[0 - (i + 1)], arr[i]
+if arr==arr2:
+    print("Palindromdur.")
 else:
-    ort = len(a)/2
-    s = round(ort)-1
-    palindrom = True
-    for i in range(0,s):
-        if a[0-(i+1)] != a[i]:
-             print("palindrom degildir")
-             palindrom = False
-             break
-    if palindrom:
-             print("palindromdur")
+    print("Palindrom değildir.")
 ```
-> Girilen kelimenin uzunlugunun oncelikle cift veya tek sayi oldugunu kontrol ettim. Uzuluk ciftse girilen kelime palindrom olmaz. Eger bu sayi tek ise isleme sokulur. Bu islemde oncelikle uzunlugu ikiye boldum. Daha sonra 'round(ort)' komutuyla bu sayiyi yukariya yuvarladim. 0'dan girilen kelimenin ortasindaki harfin degerine kadar donguyu calistirdim. Daha sonra ortanca sayinin onceki kismi ile(1,2,3) sonraki kısmının(-1,-2,-3) eşit olup olmadigini kontrol ettim. Eger esit degilse kelime palindrom degildir. Eger bu degerler esit ise sayi palindromdur.
+> Kullanıcıya kelime girdisi yaptırdım. Daha sonra girilen kelimedeki harfleri küçülttüm. İki dizi oluşturdum. Girilen kelimenin uzunluğu kadar dönecek bir for döngüsü oluşturdum. Bu girilen harfleri diziye aktardım. Daha sonra girilen kelimeyi ikiye bölerek ortanca harfi buldum. Bulduğum ortanca harfe dönecek kadar bir for döngüsü daha oluşturdum. Bu for döngüsünde ortanca harfin sağındaki ve solundaki harflerin yerini değiştirdim. Son olarak da iki dizye aktarılan harflerin yerleri aynıysa palindrom yazmasını, değil ise palindrom değildir yazmasını sağladım.
